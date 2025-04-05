@@ -4,8 +4,9 @@
 const repo = 'kanji-quiz-app'; // <<< CHANGE THIS TO YOUR REPO NAME
 
 // SET THESE UNCONDITIONALLY if deploying to user.github.io/repo-name
+const distDir = 'quiz'
 const basePath = `/${repo}`;
-const assetPrefix = `/${repo}/`;
+const assetPrefix = `/${repo}/${distDir}/`;
 
 // --- OR ---
 
@@ -17,6 +18,8 @@ const assetPrefix = `/${repo}/`;
 const nextConfig = {
   // Enable static export
   output: 'export',
+
+  distDir: distDir,
 
   // Configure basePath and assetPrefix for GitHub Pages hosting
   basePath: basePath,
