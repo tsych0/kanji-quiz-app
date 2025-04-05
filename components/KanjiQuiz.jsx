@@ -43,11 +43,12 @@ const KanjiQuiz = ({ quizItems, onClose }) => {
         if (possibleAnswers.includes(option.trim())) {
             setFeedback({ message: 'Correct!', type: 'correct' });
             setScore(prev => ({ ...prev, correct: prev.correct + 1, total: prev.total + 1 }));
+            nextQuestion();
         } else {
             setFeedback({ message: `Incorrect. Correct: ${correctAnswer}`, type: 'incorrect' });
             setScore(prev => ({ ...prev, total: prev.total + 1 }));
+            setShowResult(true);
         }
-        setShowResult(true);
     };
 
     const nextQuestion = () => {
