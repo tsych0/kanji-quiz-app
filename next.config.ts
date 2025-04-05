@@ -7,8 +7,8 @@ const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
 // Important: Only set basePath if deploying to a repo page (e.g., user.github.io/repo-name)
 // If deploying to a user/org page (e.g., user.github.io), basePath should NOT be set.
 const repo = 'kanji-quiz-app'; // CHANGE THIS
-const assetPrefix = isGithubActions ? `/${repo}/` : undefined;
-const basePath = isGithubActions ? `/${repo}` : undefined;
+const assetPrefix = isGithubActions ? `/${repo}/` : `/${repo}/out/`;
+const basePath = isGithubActions ? `/${repo}` : `/${repo}`;
 
 
 const nextConfig = {
